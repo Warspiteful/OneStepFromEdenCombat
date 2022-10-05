@@ -5,27 +5,39 @@ using UnityEngine;
 
 public class TilerRenderer : MonoBehaviour
 {
-   [SerializeField] private Tile tile;
+   [SerializeField] private GridVariable grid;
 
    [SerializeField] private SpriteRenderer tileImage;
 
    [SerializeField] private Color playerColor;
    
    [SerializeField] private Color enemyColor;
+   
+   [SerializeField] 
+   private int x;
+   
+   [SerializeField] 
+   private int y;
 
    private void OnEnable()
    {
-      tile.valueUpdated += UpdateDisplay;
+      grid.valueUpdated += UpdateDisplay;
    }
    
    private void OnDisable()
    {
-      tile.valueUpdated -= UpdateDisplay;
+      grid.valueUpdated -= UpdateDisplay;
+   }
+
+   public void SetCoordinates(int x, int y)
+   {
+      this.x = x;
+      this.y = y;
    }
 
    private void UpdateDisplay()
    {
-      Alignment tileAlignment = tile.GetAlignment();
+      Alignment tileAlignment = grid.GetAlignment(x,y);
       switch (tileAlignment)
       {
          case(Alignment.PLAYER):

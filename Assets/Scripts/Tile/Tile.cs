@@ -1,24 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile
 {
-    [SerializeField] private Alignment alignment;
+    public int x;
+    
+    public int y;
+ 
+    public Alignment alignment;
 
-    [SerializeField] private bool occupied;
-
-    public VariableUpdated valueUpdated;
+    public bool occupied;
 
 
-    public void AssignAlignment(Alignment alignment)
+    public Tile(Alignment alignment)
     {
+        occupied = false;
         this.alignment = alignment;
-        valueUpdated.Invoke();
     }
-
-    public Alignment GetAlignment()
-    {
-        return alignment;
-    }
+    
 }

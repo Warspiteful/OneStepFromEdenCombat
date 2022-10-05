@@ -5,43 +5,39 @@ using UnityEngine;
 public class GridGenerator : MonoBehaviour
 {
 
-    [SerializeField] private int _width, _height;
 
-    [SerializeField] private int playerTiles;
     
-    [SerializeField] private Tile _tilePrefab;
-
-    [SerializeField] private Transform TileParent;
+    [SerializeField] private GridVariable grid;
 
     void Start()
     {
         GenerateGrid();
     }
-    // Start is called before the first frame update
+
     void GenerateGrid()
     {
-        int playerTileNum = playerTiles;
+        int playerTileNum = grid.playerTiles;
         
+        grid.TileGrid = new Tile[grid.width,grid.height];
 
-        for (int x = 0; x < _width; x++)
-        {
-            for (int y = 0; y < _height; y++)
-            {
         
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(x, y), Quaternion.identity, TileParent);
-                spawnedTile.name = $"Tile {x} {y}";
+        for (int x = 0; x < grid.width; x++)
+        {
+            for (int y = 0; y < grid.height; y++)
+            {
+                
                 if (playerTileNum > 0)
                 {
-                    spawnedTile.AssignAlignment(Alignment.PLAYER);
+                    grid.TileGrid[x, y] = new Tile(Alignment.PLAYER);
                     playerTileNum -= 1;
                 }
                 else
                 {
-                    spawnedTile.AssignAlignment(Alignment.ENEMY);
+                    grid.TileGrid[x, y] = new Tile(Alignment.ENEMY);
                 }
             }
         }
-        TileParent.position = new Vector3(- _width / 2, - _height / 2);
-
+        grid.onCreation?.Invoke();
     }
+    
 }
