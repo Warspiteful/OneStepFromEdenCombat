@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3943750377555979428}
   - component: {fileID: 6376086494439447060}
   - component: {fileID: 80053210343628321}
+  - component: {fileID: 3186159776735844028}
   m_Layer: 6
   m_Name: CommandPlayer
   m_TagString: Untagged
@@ -136,6 +137,7 @@ MonoBehaviour:
   y: 0
   timeToDecide: 2
   _alignment: 0
+  isFinished: 0
 --- !u!114 &80053210343628321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +150,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ff19b4920410042a211c2692cc31c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3186159776735844028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3943750377555979451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964aefa98bd9d4746955f30c647e20f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: 0}
