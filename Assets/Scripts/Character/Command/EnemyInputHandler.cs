@@ -11,6 +11,7 @@ namespace Character.Command
         private float timeForDecision;
         public EnemyInputHandler(float timeForDecision)
         {
+            Debug.Log("Enemy Input Created");
             this.timeForDecision = timeForDecision;
         }
         private UnitCommand[] potentialMoves;
@@ -18,12 +19,14 @@ namespace Character.Command
         // Start is called before the first frame update
         public override void Initialize()
         {
-            potentialMoves = new UnitCommand[] {MoveUp,MoveDown,MoveRight,MoveLeft};
+            Debug.Log("Enemy Moves Initialized");
+            potentialMoves = new [] {MoveUp,MoveDown,MoveRight,MoveLeft};
             
         }
 
         public  override IEnumerator StartBrain()
         {
+            Debug.Log("Enemy Brain Started");
             while (true)
             {
                 AddCommand(potentialMoves[Random.Range(0, potentialMoves.Length)]);

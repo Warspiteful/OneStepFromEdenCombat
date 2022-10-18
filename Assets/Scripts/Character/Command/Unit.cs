@@ -30,6 +30,11 @@ namespace Character.Command
             this.x = x;
             this.y = y;
         }
+        
+        public void SetStart()
+        {
+            transform.localPosition = grid.TranslateToCoord(x, y);
+        }
 
         public InputHandler GetInputHandler()
         {
