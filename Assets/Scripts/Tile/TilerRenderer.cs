@@ -33,6 +33,7 @@ public class TilerRenderer : MonoBehaviour
    {
       this.x = x;
       this.y = y;
+      grid.SetCoords(x,y,transform.localPosition);
    }
 
    private void UpdateDisplay()

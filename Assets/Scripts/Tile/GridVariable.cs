@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,8 @@ public class GridVariable : ScriptableObject
    
    public VariableUpdated onCreation;
    
-   public Vector2 playerPosition;
+   public int playerX;
+   public int playerY;
 
    
    public void AssignAlignment(int x, int y, Alignment alignment)
@@ -30,7 +32,22 @@ public class GridVariable : ScriptableObject
    {
       return TileGrid[x,y].alignment;
    }
-    
+   
+
+   public void SetCoords(int x, int y, Vector3 position)
+   {
+      TileGrid[x,y].SetCoords(position);
+   }
+   
+   public Vector2 TranslateToCoord(int x, int y)
+   {
+      if (x > width || x < 0 || y > height || y < 0)
+      {
+         throw new Exception("Invalid Coordinates");
+      }
+      return TileGrid[x,y].coord;
+   }
+
     
    public void SetOccupied(int x, int y, bool occupied)
    {

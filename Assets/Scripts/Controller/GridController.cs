@@ -36,7 +36,7 @@ public class GridController : MonoBehaviour
     private void HandleMovement(InputAction.CallbackContext ctx)
     {
 
-
+     if(transform.position == movePoint.position){
         if((int)Mathf.Round(ctx.ReadValue<Vector2>().x) != lastX)
         {
             lastX = (int) Mathf.Round(ctx.ReadValue<Vector2>().x);
@@ -62,6 +62,7 @@ public class GridController : MonoBehaviour
                     movePoint.position = new Vector3(newX, newY);
                 }
             }
+        }
         }
         
         
