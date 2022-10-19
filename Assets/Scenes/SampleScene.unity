@@ -420,6 +420,9 @@ MonoBehaviour:
   - enemy: {fileID: 3741254897850151457, guid: 71fd75b8568546b4689afe318607a285, type: 3}
     x: 6
     y: 2
+  - enemy: {fileID: 3741254897850151457, guid: d5e43687e94e72a40a95a6d5521f41e3, type: 3}
+    x: 7
+    y: 1
 --- !u!4 &1126125026
 Transform:
   m_ObjectHideFlags: 0

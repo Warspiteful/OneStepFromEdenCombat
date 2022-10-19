@@ -5,10 +5,9 @@ using UnityEngine;
 namespace Character.Command
 {
     
-
     public class EnemyInputHandler : InputHandler
     {
-        private float timeForDecision;
+        [SerializeField] private float timeForDecision;
         public EnemyInputHandler(float timeForDecision)
         {
             Debug.Log("Enemy Input Created");

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace  Character.Command
 {
+  
     public class PlayerInputHandler : InputHandler
     {
         private Controls playerControls;

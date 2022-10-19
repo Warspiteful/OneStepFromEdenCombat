@@ -33,7 +33,9 @@ public class Projectile : MonoBehaviour
         {
             unit.TakeDamage(5);
         }
-        Destroy(gameObject);
+        if(col.gameObject.CompareTag("Damagable")){
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
