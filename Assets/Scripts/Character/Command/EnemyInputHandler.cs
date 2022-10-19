@@ -20,7 +20,7 @@ namespace Character.Command
         public override void Initialize()
         {
             Debug.Log("Enemy Moves Initialized");
-            potentialMoves = new [] {MoveUp,MoveDown,MoveRight,MoveLeft};
+            potentialMoves = new [] {MoveUp,MoveDown,MoveRight,MoveLeft, Attack};
             
         }
 

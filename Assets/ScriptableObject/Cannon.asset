@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cannon
   m_EditorClassIdentifier: 
   cooldown: 5
-  projectile: {fileID: 4506167701726925418, guid: a44e2cec3262beb458a2d57ade577bd8, type: 3}
+  projectile: {fileID: 6669620686465065591, guid: a44e2cec3262beb458a2d57ade577bd8, type: 3}

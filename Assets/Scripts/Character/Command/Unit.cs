@@ -7,9 +7,6 @@ namespace Character.Command
 {
     public class Unit : MonoBehaviour
     {
-        
-        
-        
         [SerializeField] private float speed;
 
         [SerializeField] private GridVariable grid;
@@ -17,15 +14,53 @@ namespace Character.Command
         [SerializeField] private int x;
         [SerializeField] private int y;
         
-        [SerializeField] private int timeToDecide;
+        [SerializeField] private float timeToDecide;
 
         [SerializeField] private Alignment _alignment;
 
         [SerializeField] private bool isFinished;
+
+        public DelegateSignal onAttack;
         
+        public DelegateSignal onHealthChange;
+
+        public DelegateSignal onDeath;
+
+        [SerializeField] private int maxHealth;
+        [SerializeField] private int currHealth;
+        
+
+        public void TakeDamage(int dmg)
+        {
+            currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
+            if (currHealth == 0)
+            {
+                onDeath?.Invoke();
+                
+            }
+            
+            onHealthChange?.Invoke();
+        }
+
+        public int GetHealth()
+        {
+            return currHealth;
+        }
+        
+        public void TakeHeal(int heal)
+        {
+            currHealth = Mathf.Clamp(currHealth + heal, 0, maxHealth);
+            onHealthChange?.Invoke();
+        }
+
 
         public void SetStart(int x, int y)
         {
+            if (x > grid.width / 2)
+            {
+ 
+                transform.rotation = Quaternion.Euler(0,180,0);
+            }
             transform.localPosition = grid.TranslateToCoord(x, y);
             this.x = x;
             this.y = y;
@@ -90,7 +125,7 @@ namespace Character.Command
         
         public void Attack()
         {
-            Debug.Log("Attack");
+            onAttack?.Invoke();
         }
         
         private void Update()

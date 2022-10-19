@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Character.Command;
 using UnityEngine;
 
 namespace Character.Actions
@@ -7,11 +8,12 @@ namespace Character.Actions
     [CreateAssetMenu]
     public class CannonAttack : Attack
     {
-        [SerializeField] private GameObject projectile;
-        public override void OnUse()
+        [SerializeField] private Projectile projectile;
+        public override void OnUse(Unit unit)
         {
             //PLACEHOLDER
-            Instantiate(projectile);
+            Projectile proj = Instantiate(projectile,unit.transform.position + unit.transform.right, Quaternion.identity);
+            proj.SetDirection(unit.transform.right);
         }
     }
 }
