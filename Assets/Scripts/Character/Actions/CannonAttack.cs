@@ -8,12 +8,16 @@ namespace Character.Actions
     [CreateAssetMenu]
     public class CannonAttack : Attack
     {
-        [SerializeField] private Projectile projectile;
         public override void OnUse(Unit unit)
         {
-            //PLACEHOLDER
-            Projectile proj = Instantiate(projectile,unit.transform.position + unit.transform.right, Quaternion.identity);
-            proj.SetDirection(unit.transform.right);
+            Debug.Log(unit.gameObject.name + "Attacked!");
+            GameObject bullet = ObjectPool.SharedInstance.GetPooledObject(); 
+            if (bullet != null) {
+                bullet.transform.position = unit.transform.position + unit.transform.right;
+                bullet.transform.rotation = Quaternion.identity;
+                bullet.SetActive(true);
+            }
+            bullet.GetComponent<Projectile>().SetDirection(unit.transform.right);
         }
     }
 }

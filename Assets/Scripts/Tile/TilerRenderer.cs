@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 
@@ -12,6 +13,9 @@ public class TilerRenderer : MonoBehaviour
    [SerializeField] private Color playerColor;
    
    [SerializeField] private Color enemyColor;
+   
+   [SerializeField] private Color attackColor;
+
    
    [SerializeField] 
    private int x;
@@ -47,7 +51,20 @@ public class TilerRenderer : MonoBehaviour
          case(Alignment.ENEMY):
             tileImage.color = enemyColor;
             break;
-         
+      }
+   }
+
+   private void OnTriggerEnter2D(Collider2D col)
+   {
+      if(col.gameObject.CompareTag("Attack")){
+         tileImage.color = attackColor;
+      }
+   }
+
+   private void OnTriggerExit2D(Collider2D col)
+   {
+      if(col.gameObject.CompareTag("Attack")){
+         UpdateDisplay();
       }
    }
 

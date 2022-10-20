@@ -91,36 +91,40 @@ namespace Character.Command
 
         public void Move(Direction dir)
         {
+            int tempX = x;
+            int tempY = y;
             isFinished = false;
 
             switch (dir)
             {
                 case Direction.UP:
                     
-                    if (y+1 < grid.height && grid.GetAlignment(x,y+1) == _alignment)
+                    if (y+1 < grid.height && grid.GetAlignment(x,y+1) == _alignment && !grid.GetOccupied(x,y+1))
                     {
                         y += 1;
                     }
                     break;
                 case Direction.DOWN:
-                    if (y - 1 >= 0 && grid.GetAlignment(x,y-1) == _alignment)
+                    if (y - 1 >= 0 && grid.GetAlignment(x,y-1) == _alignment && !grid.GetOccupied(x,y-1))
                     {
                         y -= 1;
                     }
                     break;
                 case Direction.LEFT:
-                    if (x - 1 >= 0 && grid.GetAlignment(x-1,y) == _alignment)
+                    if (x - 1 >= 0 && grid.GetAlignment(x-1,y) == _alignment && !grid.GetOccupied(x-1, y))
                     {
                         x -= 1;
                     }
                     break;
                 case Direction.RIGHT:
-                    if (x + 1 < grid.width && grid.GetAlignment(x+1, y) == _alignment)
+                    if (x + 1 < grid.width && grid.GetAlignment(x+1, y) == _alignment && !grid.GetOccupied(x+1,y))
                     {
                         x += 1;
                     }
                     break;
             }
+            grid.SetOccupied(tempX, tempY, false);
+            grid.SetOccupied(x, y, true);
         }
         
         public void Attack()

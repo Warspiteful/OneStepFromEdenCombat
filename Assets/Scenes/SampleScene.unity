@@ -418,11 +418,11 @@ MonoBehaviour:
   _player: {fileID: 6376086494439447060, guid: 3f23362e9b2c09f41bec804f53c4e20d, type: 3}
   _enemies:
   - enemy: {fileID: 3741254897850151457, guid: 71fd75b8568546b4689afe318607a285, type: 3}
-    x: 6
-    y: 2
-  - enemy: {fileID: 3741254897850151457, guid: d5e43687e94e72a40a95a6d5521f41e3, type: 3}
     x: 7
     y: 1
+  - enemy: {fileID: 3741254897850151457, guid: d5e43687e94e72a40a95a6d5521f41e3, type: 3}
+    x: 6
+    y: 3
 --- !u!4 &1126125026
 Transform:
   m_ObjectHideFlags: 0
@@ -438,6 +438,53 @@ Transform:
   - {fileID: 335378905}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1349796412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349796414}
+  - component: {fileID: 1349796413}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1349796413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349796412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e656ff00434b1ac4584010b69ddd7e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 4506167701726925418, guid: a44e2cec3262beb458a2d57ade577bd8, type: 3}
+  amountToPool: 20
+--- !u!4 &1349796414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349796412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14616227, y: 2.506838, z: 0.13468331}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1968340097
 GameObject:

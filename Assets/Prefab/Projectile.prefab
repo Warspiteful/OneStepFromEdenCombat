@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7806076323652911862}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff9d304b2345e74ebfad920754eda3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  lifeTime: 1
   direction: {x: 0, y: 0, z: 0}
   speed: 20
 --- !u!50 &-3058971531857249287

@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
 {
 
     [SerializeField] private float lifeTime;
+    private float currentLifetime;
     [SerializeField] private Vector3 direction;
     [SerializeField] private float speed;
 
@@ -25,7 +26,12 @@ public class Projectile : MonoBehaviour
         rb.velocity = dir * speed;
     }
 
-    
+    private void OnEnable()
+    {
+        currentLifetime = lifeTime;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         Unit unit = col.gameObject.GetComponent<Unit>();
@@ -34,18 +40,20 @@ public class Projectile : MonoBehaviour
             unit.TakeDamage(5);
         }
         if(col.gameObject.CompareTag("Damagable")){
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
+        
+   
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lifeTime < 0)
+        if (currentLifetime < 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
-        lifeTime -= Time.deltaTime;
+        currentLifetime -= Time.deltaTime;
     }
 }

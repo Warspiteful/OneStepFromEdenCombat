@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4545869950302417653}
   - component: {fileID: 4170821530612787042}
   - component: {fileID: 6704361348546985266}
+  - component: {fileID: 2781367919691754206}
+  - component: {fileID: 2151031185481884042}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -101,5 +103,53 @@ MonoBehaviour:
   tileImage: {fileID: 4170821530612787042}
   playerColor: {r: 0.0037735105, g: 0.09898415, b: 1, a: 1}
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
+  attackColor: {r: 0.8773585, g: 0.78984976, b: 0.3674973, a: 1}
   x: 0
   y: 0
+--- !u!61 &2781367919691754206
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823983619643755775}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &2151031185481884042
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823983619643755775}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
