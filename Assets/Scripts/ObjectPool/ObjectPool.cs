@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public abstract class ObjectPool<T>  : MonoBehaviour where T : MonoBehaviour
 {
-    public static ObjectPool SharedInstance;
-    public List<GameObject> pooledObjects;
-    public GameObject objectToPool;
+    public static ObjectPool<T> SharedInstance;
+    public List<T> pooledObjects;
+    public T objectToPool;
     public int amountToPool;
 
     void Awake()
@@ -16,12 +16,12 @@ public class ObjectPool : MonoBehaviour
 
     void Start()
     {
-        pooledObjects = new List<GameObject>();
-        GameObject tmp;
+        pooledObjects = new List<T>();
+        T tmp;
         for(int i = 0; i < amountToPool; i++)
         {
             tmp = Instantiate(objectToPool);
-            tmp.SetActive(false);
+            tmp.gameObject.SetActive(false);
             pooledObjects.Add(tmp);
         }
     }
@@ -30,9 +30,9 @@ public class ObjectPool : MonoBehaviour
     {
         for(int i = 0; i < amountToPool; i++)
         {
-            if(!pooledObjects[i].activeInHierarchy)
+            if(!pooledObjects[i].gameObject.activeInHierarchy)
             {
-                return pooledObjects[i];
+                return pooledObjects[i].gameObject;
             }
         }
         return null;

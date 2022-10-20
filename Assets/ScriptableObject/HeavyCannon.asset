@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13df4332cabf49a44b3346715e87c2ad, type: 3}
-  m_Name: Cannon
+  m_Name: HeavyCannon
   m_EditorClassIdentifier: 
-  damage: 5
-  cooldown: 0.5
-  sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  speed: 30
-  lifeTime: 10
+  damage: 20
+  cooldown: 2
+  sprite: {fileID: 2046937636, guid: b84ca4a092571c944a8ff0e288152e6e, type: 3}
+  speed: 5
+  lifeTime: 20

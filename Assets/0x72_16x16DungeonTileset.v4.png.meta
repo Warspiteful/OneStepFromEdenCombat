@@ -155,7 +155,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,6 +163,27 @@ TextureImporter:
       bones: []
       spriteID: bde999db1e359884790ffe06a34058cd
       internalID: 1418601095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe6bb7dfe69f314da9bfc04f34fcdb8
+      internalID: 355051570
       vertices: []
       indices: 
       edges: []
@@ -181,6 +202,7 @@ TextureImporter:
       Enemy: 1418601095
       Wizard: 2046937636
       Tile: -1488038924
+      Rock: 355051570
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

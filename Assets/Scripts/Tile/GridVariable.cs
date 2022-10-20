@@ -21,6 +21,8 @@ public class GridVariable : ScriptableObject
    public int playerX;
    public int playerY;
 
+   public float distance;
+
    
    public void AssignAlignment(int x, int y, Alignment alignment)
    {

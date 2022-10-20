@@ -15,4 +15,6 @@ MonoBehaviour:
   playerTiles: 16
   width: 8
   height: 4
-  playerPosition: {x: 4, y: 2}
+  playerX: 0
+  playerY: 0
+  distance: 1.2

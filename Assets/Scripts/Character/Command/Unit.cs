@@ -29,6 +29,11 @@ namespace Character.Command
         [SerializeField] private int maxHealth;
         [SerializeField] private int currHealth;
         
+        [SerializeField] private Transform attackTile;
+        
+        [SerializeField] private int attackOffset;
+
+        
 
         public void TakeDamage(int dmg)
         {
@@ -53,9 +58,16 @@ namespace Character.Command
             onHealthChange?.Invoke();
         }
 
+        public Vector3 GetAttackTile()
+        {
+            return attackTile.position;
+        }
+
 
         public void SetStart(int x, int y)
         {
+            attackTile.localPosition = new Vector2(grid.distance*attackOffset, 0);
+
             if (x > grid.width / 2)
             {
  
@@ -64,6 +76,7 @@ namespace Character.Command
             transform.localPosition = grid.TranslateToCoord(x, y);
             this.x = x;
             this.y = y;
+
         }
         
         public void SetStart()

@@ -10,6 +10,8 @@ public class GridRenderer : MonoBehaviour
     [SerializeField] private TilerRenderer _tilePrefab;
     
     [SerializeField] private Transform TileParent;
+
+    [SerializeField] private float distance;
     
     [SerializeField] private Unit _player;
     
@@ -25,6 +27,7 @@ public class GridRenderer : MonoBehaviour
 
     private void OnEnable()
     {
+        grid.distance = 1*distance;
         grid.onCreation += RenderGrid;
     }
 
@@ -35,12 +38,13 @@ public class GridRenderer : MonoBehaviour
 
     private void RenderGrid()
     {
+        
         for (int x = 0; x < grid.width; x++)
         {
             for (int y = 0; y < grid.height; y++)
             {
-                
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(x, y), Quaternion.identity, TileParent);
+                var spawnedTile = Instantiate(_tilePrefab, 
+                    new Vector3(x, y)*distance, Quaternion.identity, TileParent);
                 spawnedTile.name = $"Tile {x} {y}";
                 spawnedTile.SetCoordinates(x, y);
             }
