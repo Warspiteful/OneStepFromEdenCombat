@@ -64,6 +64,11 @@ namespace Character.Command
         {
             unit.Attack();
         }, "Attack");
+        
+                protected readonly UnitCommand Switch = new UnitCommand(delegate (Unit unit)
+                {
+                    unit.Switch();
+                }, "Switch");
 
         
     }

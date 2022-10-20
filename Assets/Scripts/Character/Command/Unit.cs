@@ -22,6 +22,9 @@ namespace Character.Command
 
         public DelegateSignal onAttack;
         
+        public DelegateSignal onAttackSwitch;
+
+        
         public DelegateSignal onHealthChange;
 
         public DelegateSignal onDeath;
@@ -144,6 +147,11 @@ namespace Character.Command
         {
             onAttack?.Invoke();
         }
+        
+           public void Switch()
+                {
+                    onAttackSwitch?.Invoke();
+                }
         
         private void Update()
         {

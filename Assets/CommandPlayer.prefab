@@ -87,6 +87,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964aefa98bd9d4746955f30c647e20f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackList:
+  - {fileID: 11400000, guid: f753585a2625c594296b8ec43dc691bc, type: 2}
+  - {fileID: 11400000, guid: 04ea136d9e309bf4eb856b31062f36dc, type: 2}
   _attack: {fileID: 11400000, guid: f753585a2625c594296b8ec43dc691bc, type: 2}
 --- !u!114 &4037735867099472586
 MonoBehaviour:

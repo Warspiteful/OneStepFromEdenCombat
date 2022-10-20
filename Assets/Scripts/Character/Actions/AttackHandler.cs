@@ -8,7 +8,10 @@ namespace Character.Actions
 {
     public class AttackHandler : MonoBehaviour
     {
+        [SerializeField] private List<Attack> _attackList;
+        
         [SerializeField] private Attack _attack;
+
         
         private Unit unit;
 
@@ -20,9 +23,24 @@ namespace Character.Actions
             coolDown = 0;
             unit = GetComponent<Unit>();
             unit.onAttack += Attack;
+            unit.onAttackSwitch += Switch;
+            _attack = _attackList[0];
+
         }
 
-        public void Attack()
+        private void Switch()
+        {
+            int newIndex = _attackList.IndexOf(_attack) + 1;
+            if (newIndex >= _attackList.Count)
+            {
+                newIndex = 0;
+            }
+
+            _attack = _attackList[newIndex];
+
+        }
+
+        private void Attack()
         {
             if(coolDown <= 0 ){
                 _attack.OnUse(unit);

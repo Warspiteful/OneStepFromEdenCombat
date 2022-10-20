@@ -30,13 +30,10 @@ namespace  Character.Command
             Debug.Log("Input Callback Added");
             playerControls.Gameplay.Movement.performed += ctx => HandleMovement(ctx);
             playerControls.Gameplay.Movement.canceled += ctx => HandleMovement(ctx);
-            playerControls.Gameplay.PrimaryAttack.performed += ctx => HandleAttack(ctx);
+            playerControls.Gameplay.PrimaryAttack.performed += ctx => AddCommand(Attack);
+            playerControls.Gameplay.Switch.performed += ctx => AddCommand(Switch);
         }
-
-        private void HandleAttack(InputAction.CallbackContext ctx)
-        {
-            AddCommand(Attack);
-        }
+        
 
         private void HandleMovement(InputAction.CallbackContext ctx)
         {
