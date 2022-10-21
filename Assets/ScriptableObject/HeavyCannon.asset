@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HeavyCannon
   m_EditorClassIdentifier: 
   damage: 20
+  thumbnail: {fileID: 2046937636, guid: b84ca4a092571c944a8ff0e288152e6e, type: 3}
   cooldown: 2
   sprite: {fileID: 2046937636, guid: b84ca4a092571c944a8ff0e288152e6e, type: 3}
   speed: 5

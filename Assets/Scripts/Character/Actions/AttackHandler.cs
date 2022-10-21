@@ -25,11 +25,13 @@ namespace Character.Actions
             unit.onAttack += Attack;
             unit.onAttackSwitch += Switch;
             _attack = _attackList[0];
+            _attack.isActive = true;
 
         }
 
         private void Switch()
         {
+            _attack.isActive = false;
             int newIndex = _attackList.IndexOf(_attack) + 1;
             if (newIndex >= _attackList.Count)
             {
@@ -37,6 +39,7 @@ namespace Character.Actions
             }
 
             _attack = _attackList[newIndex];
+            _attack.isActive = true;
 
         }
 
